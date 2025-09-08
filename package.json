@@ -1,0 +1,70 @@
+{
+  "name": "ets-syntax-highlighting",
+  "displayName": "ETS Syntax Highlighting",
+  "description": "Comprehensive syntax highlighting and language support for ETS (ArkTS) files in HarmonyOS development. Supports decorators, UI components, and ArkTS-specific syntax.",
+  "version": "1.0.0",
+  "publisher": "your-publisher-name",
+  "author": {
+    "name": "Your Name"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/ets-syntax-highlighting.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/ets-syntax-highlighting/issues"
+  },
+  "homepage": "https://github.com/your-username/ets-syntax-highlighting#readme",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Syntax Highlighting"
+  ],
+  "keywords": [
+    "ets",
+    "arkts",
+    "harmonyos",
+    "huawei",
+    "syntax",
+    "highlighting",
+    "arkui",
+    "typescript"
+  ],
+
+  "contributes": {
+    "languages": [
+      {
+        "id": "ets",
+        "aliases": ["ETS", "ets", "ArkTS"],
+        "extensions": [".ets", ".d.ets"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ets",
+        "scopeName": "source.ets",
+        "path": "./syntaxes/ets.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "ets",
+        "path": "./snippets/ets.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "Component": {
+    "prefix": "component",
+    "body": [
+      "@Component",
+      "export struct ${1:ComponentName} {",
+      "  @State ${2:stateName}: ${3:string} = '${4:defaultValue}'",
+      "",
+      "  build() {",
+      "    Column() {",
+      "      ${5:// Component content}",
+      "    }",
+      "    .width('100%')",
+      "    .height('100%')",
+      "  }",
+      "}"
+    ],
+    "description": "Create a new ETS Component"
+  },
+  "Entry Component": {
+    "prefix": "entry",
+    "body": [
+      "@Entry",
+      "@Component",
+      "struct ${1:Index} {",
+      "  @State ${2:message}: string = '${3:Hello World}'",
+      "",
+      "  build() {",
+      "    Column() {",
+      "      Text(this.${2:message})",
+      "        .fontSize(24)",
+      "        .fontWeight(FontWeight.Bold)",
+      "    }",
+      "    .width('100%')",
+      "    .height('100%')",
+      "    .justifyContent(FlexAlign.Center)",
+      "  }",
+      "}"
+    ],
+    "description": "Create an Entry Component"
+  },
+  "State Variable": {
+    "prefix": "state",
+    "body": [
+      "@State ${1:variableName}: ${2:type} = ${3:defaultValue}"
+    ],
+    "description": "Create a State variable"
+  },
+  "Prop Variable": {
+    "prefix": "prop",
+    "body": [
+      "@Prop ${1:variableName}: ${2:type}"
+    ],
+    "description": "Create a Prop variable"
+  },
+  "Link Variable": {
+    "prefix": "link",
+    "body": [
+      "@Link ${1:variableName}: ${2:type}"
+    ],
+    "description": "Create a Link variable"
+  },
+  "Provide Variable": {
+    "prefix": "provide",
+    "body": [
+      "@Provide('${1:key}') ${2:variableName}: ${3:type} = ${4:defaultValue}"
+    ],
+    "description": "Create a Provide variable"
+  },
+  "Consume Variable": {
+    "prefix": "consume",
+    "body": [
+      "@Consume('${1:key}') ${2:variableName}: ${3:type}"
+    ],
+    "description": "Create a Consume variable"
+  },
+  "Builder Function": {
+    "prefix": "builder",
+    "body": [
+      "@Builder",
+      "${1:functionName}(${2:parameters}) {",
+      "  ${3:// Builder content}",
+      "}"
+    ],
+    "description": "Create a Builder function"
+  },
+  "Styles Function": {
+    "prefix": "styles",
+    "body": [
+      "@Styles",
+      "${1:styleName}() {",
+      "  ${2:.backgroundColor('#FFFFFF')}",
+      "  ${3:.borderRadius(8)}",
+      "}"
+    ],
+    "description": "Create a Styles function"
+  },
+  "Extend Function": {
+    "prefix": "extend",
+    "body": [
+      "@Extend(${1:Component})",
+      "${2:functionName}() {",
+      "  ${3:.fontSize(16)}",
+      "  ${4:.fontColor('#333333')}",
+      "}"
+    ],
+    "description": "Create an Extend function"
+  },
+  "Column Layout": {
+    "prefix": "column",
+    "body": [
+      "Column({ space: ${1:10} }) {",
+      "  ${2:// Column content}",
+      "}",
+      ".width('${3:100%}')",
+      ".height('${4:100%}')"
+    ],
+    "description": "Create a Column layout"
+  },
+  "Row Layout": {
+    "prefix": "row",
+    "body": [
+      "Row({ space: ${1:10} }) {",
+      "  ${2:// Row content}",
+      "}",
+      ".width('${3:100%}')",
+      ".height('${4:auto}')"
+    ],
+    "description": "Create a Row layout"
+  },
+  "Text Component": {
+    "prefix": "text",
+    "body": [
+      "Text('${1:text}')",
+      "  .fontSize(${2:16})",
+      "  .fontColor('${3:#333333}')",
+      "  .fontWeight(FontWeight.${4:Normal})"
+    ],
+    "description": "Create a Text component"
+  },
+  "Button Component": {
+    "prefix": "button",
+    "body": [
+      "Button('${1:Button Text}')",
+      "  .width('${2:100%}')",
+      "  .height(${3:40})",
+      "  .backgroundColor('${4:#007DFF}')",
+      "  .borderRadius(${5:8})",
+      "  .onClick(() => {",
+      "    ${6:// Click handler}",
+      "  })"
+    ],
+    "description": "Create a Button component"
+  },
+  "TextInput Component": {
+    "prefix": "textinput",
+    "body": [
+      "TextInput({ placeholder: '${1:placeholder}' })",
+      "  .width('${2:100%}')",
+      "  .height(${3:40})",
+      "  .borderRadius(${4:8})",
+      "  .onChange((value: string) => {",
+      "    ${5:// Change handler}",
+      "  })"
+    ],
+    "description": "Create a TextInput component"
+  },
+  "Image Component": {
+    "prefix": "image",
+    "body": [
+      "Image(\\$r('${1:app.media.icon}'))",
+      "  .width(${2:100})",
+      "  .height(${3:100})",
+      "  .objectFit(ImageFit.${4:Cover})",
+      "  .borderRadius(${5:8})"
+    ],
+    "description": "Create an Image component"
+  },
+  "List Component": {
+    "prefix": "list",
+    "body": [
+      "List({ space: ${1:10} }) {",
+      "  ForEach(${2:dataArray}, (item: ${3:ItemType}, index: number) => {",
+      "    ListItem() {",
+      "      ${4:// List item content}",
+      "    }",
+      "  }, (item: ${3:ItemType}) => item.${5:id}.toString())",
+      "}",
+      ".width('${6:100%}')",
+      ".height('${7:100%}')"
+    ],
+    "description": "Create a List component"
+  },
+  "Grid Component": {
+    "prefix": "grid",
+    "body": [
+      "Grid() {",
+      "  ForEach(${1:dataArray}, (item: ${2:ItemType}, index: number) => {",
+      "    GridItem() {",
+      "      ${3:// Grid item content}",
+      "    }",
+      "  }, (item: ${2:ItemType}) => item.${4:id}.toString())",
+      "}",
+      ".columnsTemplate('${5:1fr 1fr}')",
+      ".rowsTemplate('${6:1fr 1fr}')",
+      ".columnsGap(${7:10})",
+      ".rowsGap(${8:10})"
+    ],
+    "description": "Create a Grid component"
+  },
+  "Interface": {
+    "prefix": "interface",
+    "body": [
+      "interface ${1:InterfaceName} {",
+      "  ${2:property}: ${3:type}",
+      "}"
+    ],
+    "description": "Create an interface"
+  },
+  "Class": {
+    "prefix": "class",
+    "body": [
+      "class ${1:ClassName} {",
+      "  private ${2:property}: ${3:type}",
+      "",
+      "  constructor(${4:parameters}) {",
+      "    ${5:// Constructor logic}",
+      "  }",
+      "",
+      "  public ${6:methodName}(): ${7:returnType} {",
+      "    ${8:// Method logic}",
+      "  }",
+      "}"
+    ],
+    "description": "Create a class"
+  },
+  "Enum": {
+    "prefix": "enum",
+    "body": [
+      "enum ${1:EnumName} {",
+      "  ${2:VALUE1} = '${3:value1}',",
+      "  ${4:VALUE2} = '${5:value2}'",
+      "}"
+    ],
+    "description": "Create an enum"
+  },
+  "Import Statement": {
+    "prefix": "import",
+    "body": [
+      "import ${1:module} from '${2:@ohos.module}'"
+    ],
+    "description": "Create an import statement"
+  },
+  "Router Navigation": {
+    "prefix": "router",
+    "body": [
+      "router.pushUrl({",
+      "  url: '${1:pages/PageName}',",
+      "  params: {",
+      "    ${2:key}: ${3:value}",
+      "  }",
+      "})"
+    ],
+    "description": "Navigate to another page"
+  },
+  "Log Statement": {
+    "prefix": "log",
+    "body": [
+      "hilog.${1:info}(0x0000, '${2:tag}', '${3:message}')"
+    ],
+    "description": "Create a log statement"
+  }
+}
