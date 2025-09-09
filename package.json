@@ -58,7 +58,7 @@
     ]
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
+    "vscode:prepublish": "echo 'skip prepublish'",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./"
   },
